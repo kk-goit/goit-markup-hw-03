@@ -40,15 +40,24 @@ img {
     margin: 0 auto;
 }
 
-.visually-hidden {
-    display: none;
-    visibility: hidden;
+.visually-hidden { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    margin: -1px; 
+    border: 0; 
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .header {
     border-bottom: 1px solid var(--header-brd);
 }
 .header .container {
+    display: flex;
     padding: 0 15px;
 }
 .header-nav {
@@ -142,23 +151,29 @@ img {
     background-color: var(--bg-accent);
     padding: 188px 0;
 }
-.sec-main-container {
+.sec-main .container {
     text-align: center;
 }
 .sect-main-header {
-    display: inline-block;
+    margin: 0 auto 50px auto;
+    max-width: 496px;
     text-align: center;
     line-height: 1.07;
     width: 496px;
 }
 .sect-main-botton {
+    display: block;
+    margin: 0 auto;
     color: var(--section-main-text);
     background-color: var(--logo-acent);
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04em;
+    min-width: 169px;
+    height: 56px;
     cursor: pointer;
+    border: none;
     border-radius: 4px;
     padding: 16px 32px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
@@ -175,7 +190,7 @@ img {
     gap: 24px;
 }
 .sect-studio-item {
-    width: 264px;
+    width: calc((100% - 72px) / 4);
 }
 
 .sect-team {
